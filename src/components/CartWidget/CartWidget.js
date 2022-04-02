@@ -1,8 +1,8 @@
 import './CartWidget.css'
 
-const CartWidget = (props) => {
+const CartWidget = () => {
     return(
-        <img className="cartImg" src="./images/cartImage.png" alt="img">{props.cart}</img>
+        <img className="cartImg" src="./images/cartImage.png" alt="img"></img>
     )
 }
 
