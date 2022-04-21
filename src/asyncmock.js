@@ -25,20 +25,51 @@ const products = [ {
     stock: 50,
     description : 'cal hidratada',
 },
+{
+    id: 4,
+    name: 'gales',
+    price: 1150,
+    category : 'ceramica',
+    img :'https://depisos.com/wp-content/uploads/2021/07/gales-arena-38x38-mosaico-600x600.jpg',
+    stock: 500,
+    description : 'ceramica Cerro Negro, Gales ',
+},
+{
+    id: 5,
+    name: 'belen negro',
+    price: 1260,
+    category : 'ceramica',
+    img :'https://cerronegro.com.ar/images/productos/original//belen-negro_belen-negro-38x38.jpg',
+    stock: 1500,
+    description : 'ceramica Cerro Negro, Belen Negro ',
+}
 ]
 
-export const getProducts = () => {
+const categories = [
+    {id: 'construccion', description: 'Construccion'},
+    {id: 'ceramica', description: 'Ceramica'},
+]
+
+export const getCategories = () => {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve(categories)
+        }, 500)
+    })
+}
+
+export const getProducts = (categoryId) => {
     return new Promise (resolve => {
         setTimeout(() => {
-            resolve(products)
-        }, 2000)
+            resolve(categoryId ? products.filter(prod => prod.category === categoryId) : products)
+        }, 1000)
     })
 }
 
 export const getProductsById = (id) => {
     return new Promise (resolve => {
         setTimeout(() => {
-            resolve(products)
-        }, 2000)
+            resolve(products.find(prod => prod.id === parseInt(id)))
+        }, 1000)
     })
 }

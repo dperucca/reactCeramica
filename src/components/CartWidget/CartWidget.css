@@ -1,5 +1,7 @@
 .cartImg {
     height: 50px;
     width: 50px;
-
+    border: solid 2px red;
+    border-radius: 20%;
+    background-color: wheat;
 }
